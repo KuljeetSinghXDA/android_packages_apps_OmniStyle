@@ -42,4 +42,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <string name="browse_theme_walls">Обои темы</string>
   <string name="browse_theme_header">Заголовки темы</string>
   <string name="pick_header">Выберите заголовки</string>
+  <string name="pick_theme">Выберите тему</string>
+    <string name="theme_disable">По умолчанию</string>
 </resources>
