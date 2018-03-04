@@ -40,7 +40,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="@string/browse_header" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -49,7 +48,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="@string/pick_header">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -58,7 +56,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="@string/browse_theme_header" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -71,13 +68,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name="org.omnirom.omnistyle.ComposeThemeActivity"
+            android:label="@string/compose_theme"
+            android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".weather"
             android:label="LockClock (mono)" >
             <intent-filter>
                 <action android:name="org.omnirom.WeatherIconPack" />
-                
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -87,7 +91,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="LockClock (color)" >
             <intent-filter>
                 <action android:name="org.omnirom.WeatherIconPack" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -97,7 +100,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="Nature" >
             <intent-filter>
                 <action android:name="org.omnirom.DaylightHeaderPack1" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -107,7 +109,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="Poly" >
             <intent-filter>
                 <action android:name="org.omnirom.DaylightHeaderPack1" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -117,7 +118,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="Nature (random)" >
             <intent-filter>
                 <action android:name="org.omnirom.DaylightHeaderPack1" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -127,7 +127,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="Wavvy" >
             <intent-filter>
                 <action android:name="org.omnirom.DaylightHeaderPack1" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -137,7 +136,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="Syed" >
             <intent-filter>
                 <action android:name="org.omnirom.DaylightHeaderPack1" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -147,7 +145,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="Theme" >
             <intent-filter>
                 <action android:name="org.omnirom.DaylightHeaderPack1" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
