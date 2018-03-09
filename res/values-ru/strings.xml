@@ -50,4 +50,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <string name="download_header_failed_notice">Ошибка загрузки заголовка</string>
   <string name="header_location_local">На устройстве</string>
   <string name="header_location_online">Онлайн</string>
+  <string name="compose_theme">Создать тему</string>
+  <string name="theme_accent">Акцент</string>
+  <string name="theme_primary">Основной</string>
+  <string name="theme_notification">Уведомления</string>
+  <string name="theme_compose">Создать</string>
+  <string name="button_apply">Применить</string>
+  <string name="notification_overlay_info">Требуется перезагрузка после\nизменения наложения уведомлений</string>
 </resources>
