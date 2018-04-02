@@ -105,6 +105,8 @@ public class BrowseHeaderActivity extends Activity {
     private boolean mRemoteMode;
     private boolean mRemoteLoaded;
     private List<File> mCleanupTmpFiles = new ArrayList<>();
+    private MenuItem mMenuItem;
+    private boolean mReloading;
 
     private static final int PERMISSIONS_REQUEST_EXTERNAL_STORAGE = 0;
 
@@ -167,6 +169,9 @@ public class BrowseHeaderActivity extends Activity {
 
         @Override
         public void onClick(View view) {
+            if (mReloading) {
+                return;
+            }
             int position = getAdapterPosition();
             if (mPickerMode) {
                 DaylightHeaderInfo di = mHeadersList.get(position);
@@ -222,6 +227,9 @@ public class BrowseHeaderActivity extends Activity {
 
         @Override
         public void onClick(View view) {
+            if (mReloading) {
+                return;
+            }
             if (mPickerMode) {
                 int position = getAdapterPosition();
                 doSetRemoteHeader(position);
@@ -307,6 +315,7 @@ public class BrowseHeaderActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.header_browse_menu, menu);
+        mMenuItem = menu.findItem(R.id.header_location);
         return true;
     }
 
@@ -316,14 +325,28 @@ public class BrowseHeaderActivity extends Activity {
             finish();
         } else if (item.getItemId() == R.id.header_location) {
             if (mRemoteMode) {
-                item.setTitle(getResources().getString(R.string.header_location_online));
                 showLocal();
             } else {
-                item.setTitle(getResources().getString(R.string.header_location_local));
-                showRemote();
+                if (isNetworkAvailable()) {
+                    showRemote();
+                } else {
+                    Toast.makeText(BrowseHeaderActivity.this, R.string.no_network_message, Toast.LENGTH_LONG).show();
+                }
             }
         }
         return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu (Menu menu) {
+        if (mMenuItem != null) {
+            if (mRemoteMode) {
+                mMenuItem.setTitle(getResources().getString(R.string.header_location_local));
+            } else {
+                mMenuItem.setTitle(getResources().getString(R.string.header_location_online));
+            }
+        }
+        return super.onPrepareOptionsMenu(menu);
     }
 
     private void getAvailableHeaderPacks(Map<String, String> headerMap) {
@@ -412,6 +435,7 @@ public class BrowseHeaderActivity extends Activity {
 
         @Override
         protected Void doInBackground(Void... params) {
+            mReloading = true;
             mRemoteHeadersList.clear();
             mFilterRemoteHeadersList.clear();
             mTagList.clear();
@@ -442,6 +466,7 @@ public class BrowseHeaderActivity extends Activity {
                 }
                 showRemote();
             }
+            mReloading = false;
         }
     }
 
@@ -615,20 +640,16 @@ public class BrowseHeaderActivity extends Activity {
     }
 
     private void showRemote(){
+        mHeaderListView.setAdapter(mRemoteHeaderListAdapter);
         if (!mRemoteLoaded) {
-            if (isNetworkAvailable()) {
-                mProgress.setVisibility(View.VISIBLE);
-                FetchHeaderListTask fetch = new FetchHeaderListTask();
-                fetch.execute();
-            } else {
-                return;
-            }
+            mProgress.setVisibility(View.VISIBLE);
+            FetchHeaderListTask fetch = new FetchHeaderListTask();
+            fetch.execute();
         } else {
             mRemoteMode = true;
             mSelectSpinnerAdapter.clear();
             mSelectSpinnerAdapter.addAll(mTagSortedList);
             filterRemoteWallpapers(FILTER_BY_TAG, mTagSortedList.get(0));
-            mHeaderListView.setAdapter(mRemoteHeaderListAdapter);
         }
     }
 
