@@ -96,6 +96,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="Nature" >
             <intent-filter>
                 <action android:name="org.omnirom.DaylightHeaderPack1" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -105,6 +106,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="Poly" >
             <intent-filter>
                 <action android:name="org.omnirom.DaylightHeaderPack1" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -114,6 +116,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="Nature (random)" >
             <intent-filter>
                 <action android:name="org.omnirom.DaylightHeaderPack1" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -123,24 +126,90 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:label="Wavvy" >
             <intent-filter>
                 <action android:name="org.omnirom.DaylightHeaderPack1" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".omni_syed"
-            android:label="Syed" >
+            android:name=".colorful"
+            android:label="Colorful" >
             <intent-filter>
                 <action android:name="org.omnirom.DaylightHeaderPack1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".idk_cl0udybtlg"
+            android:label="PH - Cloudy Mood" >
+            <intent-filter>
+                <action android:name="org.omnirom.DaylightHeaderPack1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ig_fxckingmind"
+            android:label="PH - fxckingdeathwish's mind" >
+            <intent-filter>
+                <action android:name="org.omnirom.DaylightHeaderPack1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".idk_sumtim"
+            android:label="PH - Summertime" >
+            <intent-filter>
+                <action android:name="org.omnirom.DaylightHeaderPack1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".nataliasolaange"
+            android:label="PH - nataliasolaange collection" >
+            <intent-filter>
+                <action android:name="org.omnirom.DaylightHeaderPack1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".clo_llection"
+            android:label="CL - Best of COLOURLovers.com" >
+            <intent-filter>
+                <action android:name="org.omnirom.DaylightHeaderPack1" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".theme"
-            android:label="Theme" >
+            android:name=".alex_veneno"
+            android:label="CL - itsaalex's Poison Headers" >
             <intent-filter>
                 <action android:name="org.omnirom.DaylightHeaderPack1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".got"
+            android:label="JayRod - Game of Thrones" >
+            <intent-filter>
+                <action android:name="org.omnirom.DaylightHeaderPack1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".comic"
+            android:label="JayRod - JLA, Xmen and Avengers" >
+            <intent-filter>
+                <action android:name="org.omnirom.DaylightHeaderPack1" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
